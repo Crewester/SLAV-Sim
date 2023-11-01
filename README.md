@@ -1,7 +1,9 @@
 TO DOWNLOAD THE PROJECT PLEASE FOLLOW THIS LINK TO A GOOGLE DRIVE THAT CONTAINS THE UNITY PROJECT https://drive.google.com/file/d/1Bz9hCifMS7bW2E1rXOCAvf7ARb0Jz-45/view?usp=drive_link  (As the project is too large to store the assets on GitHub, but the code is here to review before downloading the project)
+
 About 
 This project was completed alongside a paper release and allows the user to simulate a self-learning autonomous vehicle on low to mid-range consumer hardware. This project is related to a research paper that you can read for free here:
 https://www.mdpi.com/1424-8220/23/20/8649?utm_campaign=releaseissue_sensorsutm_medium=emailutm_source=releaseissueutm_term=doilink91
+
 Installation
 Getting started:
 To be able to run this project a user will need to install Unity 2021.1.15f1. this can either be done through the Unity hub which can be downloaded here: https://unity.com/download or done by just downloading the 2021.1.15f1 version of unity here: https://unity.com/releases/editor/archive. 
@@ -17,6 +19,7 @@ Load up the unity environment that you would like to train the agent in and open
 To start a simulation, use the command “mlagents-learn”. This will then start to listen on port 5004 for a unity environment and will display a message informing you to start the Unity environment. Press play on the Unity environment. The agent will begin to move and training data and statistics will be displayed in the virtual environment.
 For more complex training you can pass additional commands in the learn command As documented on the ML-agents GitHub page you can pass additional parameters in this command to train the agent with specific parameters.
 To increase learning speed multiple instances of the track and the vehicles can be run at the same time contributing to the learning of the same model. To achieve this simply copy the track and vehicles and place them in a different location before beginning learning. 
+
 Quick Start Testing
 Once training is concluded a file will be written in the results folder inside the project. This folder will contain a .nn file. This file can be used to run inference within the simulator as it will control the vehicle but will not continue to learn. This is a good way to benchmark the current state of the model. SLAV-sim contains some benchmarking tools that can be used to quantify the performance of a model that has already been trained.
 To start a test you will need to place the model inside the model section of the behaviour parameter component of the self-learning vehicle (please note that the observations will need to match the observations at the time of training), then press play (without running the training command).
